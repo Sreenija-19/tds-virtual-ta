@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 .env
 key.evn
+=======
+.vercel
+venv/
+.env
+__pycache__/
+openai_response.json
+>>>>>>> 550f131 (Initial commit)

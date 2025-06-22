@@ -1,0 +1,1 @@
+[["typescript-book\\intro.md", "# TypeScript Introduction\nTypeScript is a typed superset of JavaScript that compiles to plain JavaScript.\n\n## Fat Arrow\nThe fat arrow (=>) is used for arrow functions.\n\n## Boolean Coercion\nThe !! operator coerces a value to boolean.\n"]]

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 
 # Learn more about building a configuration: https://promptfoo.dev/docs/configuration/guide
@@ -38,3 +39,46 @@ tests:
       - type: llm-rubric
         value: ensure that the output is funny
 
+=======
+providers:
+  - model: openrouter:openai/gpt-4o-mini
+    max_tokens: 1024
+  - model: openrouter:openai/gpt-4.1-nano
+    max_tokens: 1024
+  - model: openrouter:google/gemini-2.0-flash-lite-001
+
+prompt: |
+  Generate a curl command that fetches ONLY the top 12 most-starred repositories from the "facebook" organization using the GitHub API. 
+  The command should use a placeholder API key variable ($API_KEY) for authorization.
+
+assertions:
+  - type: regex
+    name: Uses correct GitHub API endpoint
+    pattern: 'https://api\.github\.com/orgs/facebook/repos'
+    description: The response must use the correct endpoint for fetching organization repositories.
+
+  - type: regex
+    name: Limits results to 12 repositories
+    pattern: 'per_page=12'
+    description: The response must limit the results to exactly 12 repositories.
+
+  - type: regex
+    name: Sorts by stars
+    pattern: 'sort=stars'
+    description: The response must sort repositories by stars.
+
+  - type: regex
+    name: Uses descending order
+    pattern: 'direction=desc'
+    description: The response must use descending order for sorting.
+
+  - type: regex
+    name: Uses API key placeholder for authorization
+    pattern: 'Authorization: Bearer \\$API_KEY'
+    description: The response must include the correct authorization header using the $API_KEY placeholder.
+
+  - type: llm_rubric
+    name: LLM rubric - correct and complete
+    rubric: |
+      The response should be a valid curl command that fetches only the top 12 most-starred repositories from the "facebook" organization using the GitHub API, sorts by stars in descending order, and includes the correct authorization header with the $API_KEY placeholder. The command should not include extraneous options or fetch more or fewer than 12 repositories.
+>>>>>>> 550f131 (Initial commit)

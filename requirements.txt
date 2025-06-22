@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 fastapi
 uvicorn
 python-dotenv
 openai
+=======
+requests
+>>>>>>> 550f131 (Initial commit)

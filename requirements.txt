@@ -1,8 +1,10 @@
-<<<<<<< HEAD
 fastapi
 uvicorn
-python-dotenv
 openai
-=======
+pandas
+numpy
+beautifulsoup4
 requests
->>>>>>> 550f131 (Initial commit)
+duckdb
+matplotlib
+python-multipart
